@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Happy Monthsary ❤️</title>
+  <title>Happy Monthsary, Babi! 🩵</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
@@ -12,7 +12,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#top"><span class="brand-heart">❤</span> For My Love</a>
+      <a class="navbar-brand fw-bold" href="#top"><span class="brand-heart">🩵</span> Babi ♥ Babi</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,41 +20,88 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#message"><i class="bi bi-envelope-heart"></i> Message</a></li>
           <li class="nav-item"><a class="nav-link" href="#photos"><i class="bi bi-images"></i> Photos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#flowers"><i class="bi bi-flower3"></i> Custom Flowers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bouquet"><i class="bi bi-flower1"></i> Bouquet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#song"><i class="bi bi-music-note-beamed"></i> Theme Song</a></li>
           <li class="nav-item"><a class="nav-link" href="#iloveyou"><i class="bi bi-heart-fill"></i> I Love You</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="top" class="hero py-5 py-lg-6">
-    <div class="container text-center">
-      <h1 class="display-5 fw-bold mb-3">Happy First Monthsary, My Love! <span class="brand-heart">♥</span></h1>
-      <p class="lead mx-auto" style="max-width: 760px;">I made this little corner of the internet just for you. Four tiny doors: a message from my heart, photos I adore, a bouquet we can design together, and a page that simply says it all.</p>
-      <div class="d-flex gap-2 justify-content-center mt-3 flex-wrap">
-        <a class="btn btn-accent" href="#message">Read the Message</a>
-        <a class="btn btn-outline-dark" href="#photos">See Our Photos</a>
-        <a class="btn btn-outline-dark" href="#flowers">Build Your Bouquet</a>
-        <a class="btn btn-outline-dark" href="#iloveyou">I Love You</a>
+  <!-- HERO with CARD BUTTONS -->
+  <header id="top" class="hero py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-center mb-4">Happy Monthsary, Babi! 🩵</h1>
+      <p class="lead mx-auto text-center" style="max-width:760px;">A cozy page for us—your message, our photos, a daisy bouquet, and our theme song with floating hearts.</p>
+
+      <div class="row g-3 g-md-4 mt-3">
+        <!-- Message -->
+        <div class="col-6 col-md-3">
+          <a href="#message" class="card-link-wrap text-decoration-none">
+            <div class="card nav-card h-100">
+              <div class="card-body text-center">
+                <div class="icon-wrap mb-2"><i class="bi bi-envelope-heart"></i></div>
+                <h6 class="mb-1">Message</h6>
+                <div class="small text-muted">A note from me</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Photos -->
+        <div class="col-6 col-md-3">
+          <a href="#photos" class="card-link-wrap text-decoration-none">
+            <div class="card nav-card h-100">
+              <div class="card-body text-center">
+                <div class="icon-wrap mb-2"><i class="bi bi-images"></i></div>
+                <h6 class="mb-1">Photos</h6>
+                <div class="small text-muted">Snapshots of us</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Bouquet -->
+        <div class="col-6 col-md-3">
+          <a href="#bouquet" class="card-link-wrap text-decoration-none">
+            <div class="card nav-card h-100">
+              <div class="card-body text-center">
+                <div class="icon-wrap mb-2"><i class="bi bi-flower1"></i></div>
+                <h6 class="mb-1">Bouquet</h6>
+                <div class="small text-muted">Daisies for you</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Theme Song -->
+        <div class="col-6 col-md-3">
+          <a href="#song" class="card-link-wrap text-decoration-none">
+            <div class="card nav-card h-100">
+              <div class="card-body text-center">
+                <div class="icon-wrap mb-2"><i class="bi bi-music-note-beamed"></i></div>
+                <h6 class="mb-1">Theme Song</h6>
+                <div class="small text-muted">Press play</div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- MESSAGE SECTION -->
+  <!-- MESSAGE -->
   <section id="message" class="py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="card p-4 p-md-5">
-            <h2 class="section-title mb-3"><i class="bi bi-envelope-heart me-2"></i>A Message For You</h2>
-            <p class="fs-5">Hi love,</p>
-            <p class="fs-5">One month with you has been a collection of tiny miracles—your laugh, your stories, the way time feels softer when we’re together. Thank you for choosing me every day.</p>
-            <p class="fs-5">Here’s to more shared sunsets, spontaneous dates, and all the simple moments that make us <em>us</em>. I’m excited for every tomorrow because it has you in it.</p>
+          <div class="card p-4 p-md-5 border-0 shadow-sm">
+            <h2 class="section-title mb-3"><i class="bi bi-envelope-heart me-2"></i>A Message for You</h2>
+            <p class="fs-5">Hi Babi,</p>
+            <p class="fs-5">One month with you feels like a soft, happy dream. Thank you for the laughs, the warmth, and the way you care. I’m excited for every little tomorrow because it has you in it.</p>
+            <p class="fs-5">Here’s to more memories, gentle hugs, and cozy moments that are perfectly <em>us</em>.</p>
             <p class="fs-5 mb-0">Always yours,</p>
             <p class="fs-5 fw-semibold">— Your Mark</p>
+
             <div class="d-flex gap-2 align-items-center">
-              <button class="btn btn-accent" id="addHeartBtn"><i class="bi bi-heart"></i> Add a Heart</button>
+              <button class="btn btn-github" id="addHeartBtn"><i class="bi bi-heart"></i> Add a Heart</button>
               <span id="heartCount" class="fw-semibold text-secondary">0 hearts added</span>
             </div>
           </div>
@@ -63,133 +110,324 @@
     </div>
   </section>
 
-  <!-- PHOTOS SECTION -->
+  <!-- PHOTOS -->
   <section id="photos" class="py-5 bg-white">
     <div class="container">
       <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-        <h2 class="section-title m-0"><i class="bi bi-images me-2"></i>Pictures</h2>
+        <h2 class="section-title m-0"><i class="bi bi-images me-2"></i>Photos</h2>
         <small class="text-secondary">Tip: Tap a photo to view it larger</small>
       </div>
+
       <div class="row g-3" id="gallery">
-        <!-- Sample images; replace src with your own -->
+        <!-- Replace with your own images or local assets -->
         <div class="col-6 col-md-4 col-lg-3">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop">
-            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="Us at dinner">
-          </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox"
+            data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop"
+            data-caption="This is our first date 💖">
+            <div class="instax">
+            <img class="instax-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="First date">
+            <div class="instax-note">our first date</div>
+            </div>
+        </a>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1887&auto=format&fit=crop">
-            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop" alt="City walk">
-          </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox"
+            data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop"
+            data-caption="This is our first date 💖">
+            <div class="instax">
+            <img class="instax-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="First date">
+            <div class="instax-note">our first date</div>
+            </div>
+        </a>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1887&auto=format&fit=crop">
-            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=600&auto=format&fit=crop" alt="Café moment">
-          </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox"
+            data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop"
+            data-caption="This is our first date 💖">
+            <div class="instax">
+            <img class="instax-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="First date">
+            <div class="instax-note">our first date</div>
+            </div>
+        </a>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1520975682031-bc1cf7a13a8c?q=80&w=1887&auto=format&fit=crop">
-            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1520975682031-bc1cf7a13a8c?q=80&w=600&auto=format&fit=crop" alt="Beach day">
-          </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox"
+            data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop"
+            data-caption="This is our first date 💖">
+            <div class="instax">
+            <img class="instax-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="First date">
+            <div class="instax-note">our first date</div>
+            </div>
+        </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox"
+            data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop"
+            data-caption="This is our first date 💖">
+            <div class="instax">
+            <img class="instax-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="First date">
+            <div class="instax-note">our first date</div>
+            </div>
+        </a>
         </div>
       </div>
 
       <!-- Lightbox Modal -->
-      <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
+            <div class="modal-content">
             <div class="modal-body p-0">
-              <img id="lightboxImg" class="img-fluid w-100" alt="Expanded photo">
+                <div class="instax instax-modal m-0">
+                <img id="lightboxImg" class="instax-photo" alt="Expanded photo">
+                <div id="lightboxCaption" class="instax-note"></div>
+                </div>
             </div>
             <div class="modal-footer justify-content-between">
-              <div class="text-secondary small">Swipe down or tap outside to close</div>
-              <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="text-secondary small">Tap outside to close</div>
+                <button class="btn btn-github-outline" data-bs-dismiss="modal">Close</button>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
   </section>
 
-  <!-- CUSTOM FLOWERS SECTION -->
-  <section id="flowers" class="py-5">
+  <!-- BOUQUET OF DAISIES -->
+<section id="bouquet" class="py-5">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+      <h2 class="section-title m-0"><i class="bi bi-flower1 me-2"></i>Daisy Garden</h2>
+      <button id="toggleGarden" class="btn btn-github-outline btn-sm">
+        <i class="bi bi-moon-stars me-1"></i> Night Mode
+      </button>
+    </div>
+    <p class="text-secondary mb-4">A breezy garden of daisies for you, Babi 🌼</p>
+
+    <div class="d-flex justify-content-center">
+      <!-- Responsive SVG Garden -->
+      <svg id="garden" class="daisy-garden" viewBox="0 0 1200 420" role="img" aria-label="Daisy garden">
+        <defs>
+          <!-- DAY sky -->
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="#d7eeff"/>
+            <stop offset="60%" stop-color="#ffffff"/>
+          </linearGradient>
+          <!-- NIGHT sky -->
+          <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="#0b1c3a"/>
+            <stop offset="100%" stop-color="#0a0f24"/>
+          </linearGradient>
+          <!-- Hills -->
+          <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b8e6b8"/>
+            <stop offset="100%" stop-color="#a3dba3"/>
+          </linearGradient>
+          <!-- Glow for daisies at night -->
+          <filter id="daisyGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- ======================= DAY SCENE ======================= -->
+        <g id="dayScene">
+          <!-- Sky -->
+          <rect width="1200" height="420" fill="url(#skyDay)"/>
+          <!-- Clouds -->
+          <g class="clouds" fill="#ffffff" opacity=".85">
+            <g class="cloud driftL" transform="translate(100,70)">
+              <ellipse cx="0" cy="0" rx="60" ry="25"/>
+              <ellipse cx="45" cy="-10" rx="45" ry="20"/>
+              <ellipse cx="-50" cy="-8" rx="40" ry="18"/>
+            </g>
+            <g class="cloud driftR" transform="translate(900,90)">
+              <ellipse cx="0" cy="0" rx="55" ry="24"/>
+              <ellipse cx="40" cy="-12" rx="40" ry="18"/>
+              <ellipse cx="-45" cy="-8" rx="35" ry="16"/>
+            </g>
+            <g class="cloud driftL" transform="translate(600,55) scale(.9)">
+              <ellipse cx="0" cy="0" rx="55" ry="22"/>
+              <ellipse cx="40" cy="-12" rx="40" ry="18"/>
+              <ellipse cx="-45" cy="-8" rx="35" ry="16"/>
+            </g>
+          </g>
+          <!-- Hills -->
+          <path d="M0,320 C200,270 420,340 600,300 C820,250 1000,330 1200,300 L1200,420 L0,420 Z"
+                fill="url(#hillGrad)"/>
+          <path d="M0,350 C220,300 450,360 650,330 C860,300 1040,360 1200,340 L1200,420 L0,420 Z"
+                fill="#bfeabf" opacity=".9"/>
+          <!-- Grass blades -->
+          <g class="grass-blades" stroke="#98d4a3" stroke-width="5" stroke-linecap="round" opacity=".28">
+            <path d="M90,392  Q105,362 115,348"/>
+            <path d="M160,392 Q175,362 185,348"/>
+            <path d="M250,392 Q262,365 270,352"/>
+            <path d="M330,392 Q345,362 355,350"/>
+            <path d="M880,392 Q895,362 905,348"/>
+            <path d="M980,392 Q995,362 1008,350"/>
+            <path d="M1080,392 Q1092,364 1102,350"/>
+            </g>
+          <!-- Birds (tiny V shapes) -->
+          <g class="birds" stroke="#274872" stroke-width="3" stroke-linecap="round" fill="none" opacity=".6">
+            <path class="bird flyR" d="M200,120 q20,-12 40,0"/>
+            <path class="bird flyR" d="M240,130 q20,-12 40,0"/>
+            <path class="bird flyL" d="M980,110 q-20,-12 -40,0"/>
+            <path class="bird flyL" d="M940,120 q-18,-10 -36,0"/>
+          </g>
+        </g>
+
+        <!-- ======================= NIGHT SCENE ====================== -->
+        <g id="nightScene" style="display:none">
+          <rect width="1200" height="420" fill="url(#skyNight)"/>
+          <!-- Stars -->
+          <g class="stars" fill="#cde0ff" opacity=".9">
+            <!-- a few rows of tiny stars -->
+            <circle cx="120" cy="60" r="1.4"/><circle cx="200" cy="40" r="1.2"/><circle cx="320" cy="70" r="1.3"/>
+            <circle cx="450" cy="55" r="1.1"/><circle cx="560" cy="35" r="1.4"/><circle cx="700" cy="50" r="1.2"/>
+            <circle cx="830" cy="65" r="1.3"/><circle cx="980" cy="40" r="1.1"/><circle cx="1100" cy="75" r="1.3"/>
+            <circle cx="150" cy="110" r="1.1"/><circle cx="260" cy="95" r="1.2"/><circle cx="390" cy="115" r="1.3"/>
+            <circle cx="520" cy="100" r="1.1"/><circle cx="650" cy="90" r="1.2"/><circle cx="780" cy="110" r="1.3"/>
+            <circle cx="910" cy="95" r="1.1"/><circle cx="1040" cy="120" r="1.3"/>
+          </g>
+          <!-- Moon -->
+          <g>
+            <circle cx="1000" cy="85" r="26" fill="#fffbde"/>
+            <circle cx="990" cy="78" r="26" fill="url(#skyNight)"/>
+          </g>
+          <!-- Hills (darker) -->
+          <path d="M0,320 C200,270 420,340 600,300 C820,250 1000,330 1200,300 L1200,420 L0,420 Z"
+                fill="#0f3b28" opacity=".85"/>
+          <path d="M0,350 C220,300 450,360 650,330 C860,300 1040,360 1200,340 L1200,420 L0,420 Z"
+                fill="#0c2f20" opacity=".9"/>
+          <!-- Fireflies -->
+          <g id="fireflies"></g>
+        </g>
+
+<!-- Background meadow detail -->
+<g opacity="0.15" fill="#2d7a3d">
+  <ellipse cx="600" cy="400" rx="600" ry="60"/>
+</g>
+
+<!-- =================== DAISIES (shared) ===================== -->
+<g id="daisies">
+  <!-- Back row: lighter, smaller daisies -->
+  <g opacity="0.75">
+    <g class="daisy"><line x1="140" y1="380" x2="140" y2="310" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(140,295) scale(0.75)"/></g>
+    <g class="daisy"><line x1="220" y1="380" x2="220" y2="305" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(220,290) scale(0.78)"/></g>
+    <g class="daisy"><line x1="310" y1="380" x2="310" y2="300" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(310,285) scale(0.8)"/></g>
+    <g class="daisy"><line x1="410" y1="380" x2="410" y2="305" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(410,290) scale(0.78)"/></g>
+    <g class="daisy"><line x1="510" y1="380" x2="510" y2="300" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(510,285) scale(0.8)"/></g>
+    <g class="daisy"><line x1="610" y1="380" x2="610" y2="305" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(610,290) scale(0.78)"/></g>
+    <g class="daisy"><line x1="710" y1="380" x2="710" y2="300" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(710,285) scale(0.8)"/></g>
+    <g class="daisy"><line x1="810" y1="380" x2="810" y2="305" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(810,290) scale(0.78)"/></g>
+    <g class="daisy"><line x1="910" y1="380" x2="910" y2="300" stroke="#358a4b" stroke-width="5" stroke-linecap="round"/><use href="#daisy" transform="translate(910,285) scale(0.8)"/></g>
+  </g>
+
+  <!-- Front row: brighter, bigger daisies -->
+  <g>
+    <g class="daisy"><line x1="10" y1="390" x2="10" y2="300" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(10,285) scale(0.95)"/></g>
+    <g class="daisy"><line x1="270" y1="390" x2="270" y2="295" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(270,280) scale(1.0)"/></g>
+    <g class="daisy"><line x1="370" y1="390" x2="370" y2="295" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(370,280) scale(1.05)"/></g>
+    <g class="daisy"><line x1="470" y1="390" x2="470" y2="290" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(470,275) scale(1.1)"/></g>
+    <g class="daisy"><line x1="570" y1="390" x2="570" y2="290" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(570,275) scale(1.15)"/></g>
+    <g class="daisy"><line x1="670" y1="390" x2="670" y2="290" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(670,275) scale(1.1)"/></g>
+    <g class="daisy"><line x1="770" y1="390" x2="770" y2="295" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(770,280) scale(1.05)"/></g>
+    <g class="daisy"><line x1="870" y1="390" x2="870" y2="295" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(870,280) scale(1.0)"/></g>
+    <g class="daisy"><line x1="970" y1="390" x2="970" y2="300" stroke="#358a4b" stroke-width="6" stroke-linecap="round"/><use href="#daisy" transform="translate(970,285) scale(0.95)"/></g>
+  </g>
+</g>
+
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+  <!-- THEME SONG (Spotify-ish) -->
+  <section id="song" class="py-5">
     <div class="container">
-      <h2 class="section-title mb-4"><i class="bi bi-flower3 me-2"></i>Build Your Bouquet</h2>
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6 order-lg-2 d-flex justify-content-center">
-          <!-- SVG preview -->
-          <div class="bouquet-stage d-flex align-items-center justify-content-center p-3">
-            <svg id="bouquetSvg" viewBox="0 0 300 300" width="100%" height="100%" role="img" aria-label="Bouquet preview">
-              <!-- stems -->
-              <g id="stems" stroke="#6ea04b" stroke-width="6" stroke-linecap="round"></g>
-              <!-- flowers -->
-              <g id="flowersLayer"></g>
-              <!-- ribbon -->
-              <path class="ribbon" d="M115 220 Q150 200 185 220 Q150 235 115 220z"/>
-              <circle class="ribbon" cx="150" cy="220" r="10"/>
-            </svg>
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-1">
-          <div class="card p-4 controls">
-            <div class="row g-3">
-              <div class="col-12">
-                <label class="form-label">Flower Type</label>
-                <div class="btn-group w-100" role="group">
-                  <input type="radio" class="btn-check" name="flowerType" id="typeRose" value="rose" checked>
-                  <label class="btn btn-outline-dark" for="typeRose">Roses</label>
-                  <input type="radio" class="btn-check" name="flowerType" id="typeTulip" value="tulip">
-                  <label class="btn btn-outline-dark" for="typeTulip">Tulips</label>
-                  <input type="radio" class="btn-check" name="flowerType" id="typeDaisy" value="daisy">
-                  <label class="btn btn-outline-dark" for="typeDaisy">Daisies</label>
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <label for="colorPicker" class="form-label">Petal Color</label>
-                <input type="color" class="form-control form-control-color w-100" id="colorPicker" value="#ff6b81" title="Choose flower color">
-              </div>
-              <div class="col-12 col-md-6">
-                <label for="countRange" class="form-label">How many flowers: <span id="countLabel">6</span></label>
-                <input type="range" class="form-range" min="3" max="12" value="6" id="countRange">
-              </div>
-              <div class="col-12">
-                <label for="noteInput" class="form-label">Add a tiny note (optional)</label>
-                <input id="noteInput" class="form-control" placeholder="e.g., For the love of my life">
-              </div>
-              <div class="col-12 d-flex gap-2">
-                <button id="regenBtn" class="btn btn-accent"><i class="bi bi-stars"></i> Refresh Bouquet</button>
-                <button id="savePngBtn" class="btn btn-outline-dark"><i class="bi bi-download"></i> Save as PNG</button>
-              </div>
-              <div class="col-12 small text-secondary">Pro tip: change color & type, drag the range, then tap “Refresh Bouquet”.</div>
+      <h2 class="section-title mb-3"><i class="bi bi-music-note-beamed me-2"></i>Our Theme Song</h2>
+      <div class="card spotify-card border-0 shadow-sm p-3 p-md-4">
+        <div class="row g-3 align-items-center">
+          <!-- Cover -->
+          <div class="col-auto">
+            <div class="cover rounded">
+              <img id="coverImg" src="assets/cover.jpg" alt="Album cover" onerror="this.src='https://picsum.photos/200?blur=2';">
             </div>
+          </div>
+
+          <!-- Meta + controls -->
+          <div class="col">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+              <div>
+                <div class="track-title fw-semibold">Our Song</div>
+                <div class="track-artist text-secondary small">Mark → Babi</div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-volume-up-fill text-secondary"></i>
+                <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9" class="form-range volume-range">
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <button id="playPause" class="btn btn-github"><i class="bi bi-play-fill me-1"></i> Play</button>
+              <div class="time small text-secondary"><span id="cur">0:00</span> / <span id="dur">0:00</span></div>
+            </div>
+
+            <input id="seek" type="range" min="0" max="100" value="0" class="form-range progress-range mt-2">
+            <audio id="audio">
+              <source src="assets/theme-song.mp3" type="audio/mpeg">
+            </audio>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- I LOVE YOU SECTION -->
+  <!-- I LOVE YOU (simple section, NOT a card) -->
   <section id="iloveyou" class="py-5 love-bg">
-    <div class="container love-content text-center">
-      <h2 class="display-6 fw-bold mb-3"><i class="bi bi-heart-fill brand-heart"></i> I Love You</h2>
-      <p class="lead">No matter where we are or what we’re doing, this will always be true. </p>
-      <div class="my-4">
-        <button id="confettiBtn" class="btn btn-accent btn-lg"><i class="bi bi-balloon-heart"></i> Celebrate Us</button>
-      </div>
-      <p class="text-secondary">(Tap for floating hearts ✨)</p>
+    <div class="container text-center">
+      <h2 class="display-6 fw-bold mb-2"><i class="bi bi-heart-fill brand-heart"></i> I Love You, Babi!</h2>
+      <p class="lead mb-4">No matter where we are or what we’re doing, this will always be true.</p>
+      <button id="toggleHearts" class="btn btn-github"><i class="bi bi-heart-fill me-1"></i> Release Floating Hearts</button>
+      <div id="heartsContainer" class="heart-field position-relative mt-4"></div>
     </div>
-    <!-- floating hearts container -->
-    <div id="heartsContainer"></div>
   </section>
 
   <footer class="py-4">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-      <div class="footer">Made with ❤ by Mark</div>
-      <div class="sticky-bottom-cta">
-        <a href="#message" class="btn btn-accent btn-sm"><i class="bi bi-arrow-up-right"></i> Back to Message</a>
-      </div>
+      <div class="footer">Made with 🩵 by Mark</div>
+      <a href="#top" class="btn btn-github-outline btn-sm"><i class="bi bi-arrow-up"></i> Back to top</a>
     </div>
   </footer>
+
+  <!-- Daisy symbol definition -->
+  <svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="daisy">
+      <!-- Petals with subtle blue-grey outline -->
+      <g class="petals">
+        <g><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="2.0"/></g>
+        <g transform="rotate(30)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(60)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(90)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(120)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(150)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(180)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(210)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(240)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(270)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(300)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+        <g transform="rotate(330)"><ellipse rx="14" ry="40" cx="0" cy="-40" fill="#ffffff" stroke="#e6f2ff" stroke-width="1.2"/></g>
+      </g>
+      <!-- Center with soft golden outline -->
+      <circle r="18" fill="#ffd166" stroke="#ffef9f" stroke-width="2.2"/>
+    </g>
+  </defs>
+</svg>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>

@@ -1,181 +1,216 @@
- // Smooth scroll for anchor links (nice on mobile)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const targetId = a.getAttribute('href');
-        if(targetId.length>1){
-          e.preventDefault();
-          document.querySelector(targetId)?.scrollIntoView({behavior:'smooth'});
-          // collapse nav on mobile after click
-          const nav = document.getElementById('nav');
-          if(nav.classList.contains('show')) new bootstrap.Collapse(nav).hide();
-        }
-      })
-    })
-
-    // Message hearts counter
-    const addHeartBtn = document.getElementById('addHeartBtn');
-    const heartCount = document.getElementById('heartCount');
-    let hearts = 0;
-    addHeartBtn.addEventListener('click', ()=>{
-      hearts++;
-      heartCount.textContent = `${hearts} ${hearts===1?'heart':'hearts'} added`;
-      addHeartBtn.classList.add('heart-pop');
-      setTimeout(()=>addHeartBtn.classList.remove('heart-pop'), 600);
-    });
-
-    // Lightbox logic
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    document.querySelectorAll('#gallery a[data-bs-target="#lightbox"]').forEach(link=>{
-      link.addEventListener('click', e=>{
-        const img = link.getAttribute('data-img');
-        lightboxImg.src = img;
-      });
-    });
-
-    // Bouquet generator (simple radial flowers)
-    const svg = document.getElementById('bouquetSvg');
-    const flowersLayer = document.getElementById('flowersLayer');
-    const stemsLayer = document.getElementById('stems');
-    const colorPicker = document.getElementById('colorPicker');
-    const countRange = document.getElementById('countRange');
-    const countLabel = document.getElementById('countLabel');
-    const regenBtn = document.getElementById('regenBtn');
-    const savePngBtn = document.getElementById('savePngBtn');
-    const noteInput = document.getElementById('noteInput');
-
-    countRange.addEventListener('input', ()=>countLabel.textContent = countRange.value);
-
-    function rand(min,max){return Math.random()*(max-min)+min}
-
-    function drawBouquet(){
-      const n = parseInt(countRange.value,10);
-      const color = colorPicker.value;
-      const type = document.querySelector('input[name="flowerType"]:checked').value;
-      flowersLayer.innerHTML = '';
-      stemsLayer.innerHTML = '';
-
-      const centerX = 150, baseY = 230;
-      for(let i=0;i<n;i++){
-        const x = centerX + rand(-50,50);
-        const y = baseY - rand(30,85);
-
-        // draw stem
-        const stem = document.createElementNS('http://www.w3.org/2000/svg','path');
-        stem.setAttribute('d', `M ${centerX} ${baseY} Q ${centerX+rand(-20,20)} ${y+rand(10,30)} ${x} ${y}`);
-        stemsLayer.appendChild(stem);
-
-        // draw flower by type
-        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
-        g.setAttribute('transform', `translate(${x},${y})`);
-
-        if(type==='rose'){
-          // layered petals
-          for(let r=3; r>0; r--){
-            const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
-            c.setAttribute('cx',0); c.setAttribute('cy',0);
-            c.setAttribute('r', 10 + r*4);
-            c.setAttribute('fill', color);
-            c.setAttribute('opacity', 0.25 + r*0.18);
-            g.appendChild(c);
-          }
-          const core = document.createElementNS('http://www.w3.org/2000/svg','circle');
-          core.setAttribute('r',7); core.setAttribute('fill', color);
-          g.appendChild(core);
-        } else if(type==='tulip'){
-          const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-          path.setAttribute('d','M0 0 C -10 -12, -10 -26, 0 -28 C 10 -26, 10 -12, 0 0 z');
-          path.setAttribute('fill', color);
-          g.appendChild(path);
-          for(let k=-8;k<=8;k+=8){
-            const petal = document.createElementNS('http://www.w3.org/2000/svg','path');
-            petal.setAttribute('d',`M${k} -6 C ${k-8} -16, ${k-8} -24, ${k} -28`);
-            petal.setAttribute('stroke', color);
-            petal.setAttribute('fill','none');
-            petal.setAttribute('stroke-width','3');
-            g.appendChild(petal);
-          }
-        } else { // daisy
-          const petals = 10;
-          for(let a=0;a<petals;a++){
-            const angle = (Math.PI*2/petals)*a;
-            const px = Math.cos(angle)*12;
-            const py = Math.sin(angle)*12;
-            const el = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-            el.setAttribute('cx',px); el.setAttribute('cy',py);
-            el.setAttribute('rx',7); el.setAttribute('ry',12);
-            el.setAttribute('fill', color);
-            el.setAttribute('opacity','.9');
-            g.appendChild(el);
-          }
-          const core = document.createElementNS('http://www.w3.org/2000/svg','circle');
-          core.setAttribute('r',6); core.setAttribute('fill', '#ffd166');
-          g.appendChild(core);
-        }
-
-        flowersLayer.appendChild(g);
-      }
-
-      // Optional note
-      const oldNote = document.getElementById('noteSvg');
-      if(oldNote) oldNote.remove();
-      if(noteInput.value.trim()){
-        const text = document.createElementNS('http://www.w3.org/2000/svg','text');
-        text.setAttribute('id','noteSvg');
-        text.setAttribute('x','150');
-        text.setAttribute('y','270');
-        text.setAttribute('text-anchor','middle');
-        text.setAttribute('font-size','12');
-        text.setAttribute('fill','#6c757d');
-        text.textContent = noteInput.value.trim();
-        svg.appendChild(text);
-      }
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const targetId = a.getAttribute('href');
+    if (targetId.length > 1){
+      e.preventDefault();
+      document.querySelector(targetId)?.scrollIntoView({behavior:'smooth'});
+      // collapse nav on mobile
+      const nav = document.getElementById('nav');
+      if (nav.classList.contains('show')) new bootstrap.Collapse(nav).hide();
     }
+  });
+});
 
-    // Convert SVG to PNG and download
-    function downloadPNG(){
-      const serializer = new XMLSerializer();
-      const svgData = serializer.serializeToString(svg);
-      const svgBlob = new Blob([svgData], {type:'image/svg+xml;charset=utf-8'});
-      const url = URL.createObjectURL(svgBlob);
-      const img = new Image();
-      img.onload = function(){
-        const canvas = document.createElement('canvas');
-        canvas.width = 1000; canvas.height = 1000;
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0,0,canvas.width,canvas.height);
-        ctx.drawImage(img,0,0,canvas.width,canvas.height);
-        URL.revokeObjectURL(url);
-        const a = document.createElement('a');
-        a.download = 'bouquet.png';
-        a.href = canvas.toDataURL('image/png');
-        a.click();
-      }
-      img.src = url;
-    }
+// Message hearts counter
+const addHeartBtn = document.getElementById('addHeartBtn');
+const heartCount = document.getElementById('heartCount');
+let hearts = 0;
+addHeartBtn?.addEventListener('click', ()=>{
+  hearts++;
+  heartCount.textContent = `${hearts} ${hearts===1?'heart':'hearts'} added`;
+  addHeartBtn.classList.add('heart-pop');
+  setTimeout(()=>addHeartBtn.classList.remove('heart-pop'), 600);
+});
 
-    regenBtn.addEventListener('click', (e)=>{e.preventDefault(); drawBouquet();});
-    savePngBtn.addEventListener('click', (e)=>{e.preventDefault(); downloadPNG();});
-    document.querySelectorAll('input[name="flowerType"]').forEach(r=>r.addEventListener('change', drawBouquet));
-    colorPicker.addEventListener('change', drawBouquet);
-    countRange.addEventListener('change', drawBouquet);
+// Lightbox logic (with caption)
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
 
-    // Initial render
-    drawBouquet();
+document.querySelectorAll('#gallery a[data-bs-target="#lightbox"]').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    const img = link.getAttribute('data-img');
+    const caption = link.getAttribute('data-caption') || '';
+    lightboxImg.src = img;
+    lightboxCaption.textContent = caption;
+  });
+});
 
-    // I Love You: floating hearts
-    const heartsContainer = document.getElementById('heartsContainer');
-    function spawnHeart(){
-      const h = document.createElement('div');
-      h.className = 'floating-heart';
-      h.style.left = Math.random()*100 + 'vw';
-      h.style.bottom = '-20px';
-      h.style.animationDelay = (Math.random()*1.5)+'s';
-      h.textContent = ['❤','💖','💗','💓','💞'][Math.floor(Math.random()*5)];
-      heartsContainer.appendChild(h);
-      setTimeout(()=>h.remove(), 7000);
-    }
-    document.getElementById('confettiBtn').addEventListener('click', ()=>{
-      for(let i=0;i<25;i++) setTimeout(spawnHeart, i*120);
-    });
+/* ===== Spotify-like Player (no hearts tied to play) ===== */
+const audio = document.getElementById('audio');
+const playPause = document.getElementById('playPause');
+const seek = document.getElementById('seek');
+const cur = document.getElementById('cur');
+const dur = document.getElementById('dur');
+const volume = document.getElementById('volume');
+
+function fmt(t){
+  if(!isFinite(t)) return '0:00';
+  const m = Math.floor(t/60);
+  const s = Math.floor(t%60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+function updateProgress(){
+  if(!audio.duration) return;
+  seek.value = (audio.currentTime / audio.duration) * 100;
+  cur.textContent = fmt(audio.currentTime);
+}
+playPause?.addEventListener('click', ()=>{
+  if(audio.paused){ audio.play(); } else { audio.pause(); }
+});
+audio?.addEventListener('loadedmetadata', ()=>{
+  dur.textContent = fmt(audio.duration);
+  updateProgress();
+});
+audio?.addEventListener('timeupdate', updateProgress);
+audio?.addEventListener('play', ()=>{
+  playPause.innerHTML = '<i class="bi bi-pause-fill me-1"></i> Pause';
+});
+audio?.addEventListener('pause', ()=>{
+  playPause.innerHTML = '<i class="bi bi-play-fill me-1"></i> Play';
+});
+audio?.addEventListener('ended', ()=>{
+  playPause.innerHTML = '<i class="bi bi-play-fill me-1"></i> Play';
+  seek.value = 0; cur.textContent = '0:00';
+});
+seek?.addEventListener('input', ()=>{
+  if(!audio.duration) return;
+  audio.currentTime = (seek.value/100) * audio.duration;
+});
+volume?.addEventListener('input', ()=>{
+  audio.volume = parseFloat(volume.value);
+});
+
+/* ===== I Love You: Floating Hearts (independent button) ===== */
+const heartsField = document.getElementById('heartsContainer');
+const toggleHeartsBtn = document.getElementById('toggleHearts');
+
+let heartTimer = null;
+let heartsOn = false;
+
+// Red/pink-only heart set (more variants)
+const HEART_EMOJIS = ['❤️','🩷','💖','💗','💓','💞','💘','💝','💙'];
+
+function spawnHeart(){
+  const h = document.createElement('div');
+  h.className = 'floating-heart';
+  h.textContent = HEART_EMOJIS[Math.floor(Math.random()*HEART_EMOJIS.length)];
+  h.style.left = Math.random()*90 + '%';
+  h.style.bottom = '10px';
+  // slight randomize size & rotation for variety
+  h.style.transform = `scale(${0.9 + Math.random()*0.6}) rotate(${(Math.random()*20-10)}deg)`;
+  heartsField.appendChild(h);
+  setTimeout(()=>h.remove(), 6200);
+}
+
+function startHearts(){
+  if(heartTimer) return;
+  spawnHeart();
+  heartTimer = setInterval(spawnHeart, 480);
+}
+function stopHearts(){
+  clearInterval(heartTimer);
+  heartTimer = null;
+}
+
+toggleHeartsBtn?.addEventListener('click', ()=>{
+  heartsOn = !heartsOn;
+  if(heartsOn){
+    toggleHeartsBtn.innerHTML = '<i class="bi bi-heartbreak me-1"></i> Stop Floating Hearts';
+    startHearts();
+  }else{
+    toggleHeartsBtn.innerHTML = '<i class="bi bi-heart-fill me-1"></i> Release Floating Hearts';
+    stopHearts();
+  }
+});
+
+/* === Daisy Garden: Day/Night toggle + fireflies === */
+const toggleGardenBtn = document.getElementById('toggleGarden');
+const dayScene = document.getElementById('dayScene');
+const nightScene = document.getElementById('nightScene');
+const daisiesGroup = document.getElementById('daisies');
+const firefliesLayer = document.getElementById('fireflies');
+
+let nightMode = false;
+let fireflyTimer = null;
+
+function setNight(on){
+  nightMode = on;
+  dayScene.style.display = on ? 'none' : 'block';
+  nightScene.style.display = on ? 'block' : 'none';
+
+  // add/remove glow on daisies
+  if(on){
+    daisiesGroup.classList.add('night-glow');
+    toggleGardenBtn.innerHTML = '<i class="bi bi-sun me-1"></i> Day Mode';
+    startFireflies();
+  }else{
+    daisiesGroup.classList.remove('night-glow');
+    toggleGardenBtn.innerHTML = '<i class="bi bi-moon-stars me-1"></i> Night Mode';
+    stopFireflies();
+  }
+}
+
+function spawnFirefly(){
+  // random position across the meadow
+  const x = 120 + Math.random()*960;
+  const y = 300 + Math.random()*80;
+  const ff = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  ff.setAttribute('cx', x.toFixed(1));
+  ff.setAttribute('cy', y.toFixed(1));
+  ff.setAttribute('r', (1.8 + Math.random()*1.2).toFixed(1));
+  ff.setAttribute('class','firefly');
+  // small random animation delay
+  ff.style.animationDelay = (Math.random()*2)+'s';
+  firefliesLayer.appendChild(ff);
+  // clean up after a while
+  setTimeout(()=> ff.remove(), 8000);
+}
+
+function startFireflies(){
+  if(fireflyTimer) return;
+  // seed a few
+  for(let i=0;i<10;i++) spawnFirefly();
+  fireflyTimer = setInterval(()=> spawnFirefly(), 700);
+}
+function stopFireflies(){
+  clearInterval(fireflyTimer); fireflyTimer = null;
+  while(firefliesLayer.firstChild) firefliesLayer.firstChild.remove();
+}
+
+toggleGardenBtn?.addEventListener('click', ()=> setNight(!nightMode));
+// default: Day
+setNight(false);
+
+/* ==== Daisy Garden: random stem directions & amplitudes ==== */
+(function(){
+  const groups = document.querySelectorAll('#daisies > g');
+  if(!groups.length) return;
+
+  groups.forEach((g, i) => {
+    // baseline tilt between -5° and +5°
+    const tilt = (Math.random() * 10 - 5).toFixed(2) + 'deg';
+
+    // sway amplitude between -1.8° and +1.8° (avoid 0 so it always moves)
+    let ampVal = (Math.random() * 3.6 - 1.8);
+    if (Math.abs(ampVal) < 0.4) ampVal = ampVal < 0 ? -0.6 : 0.6; // nudge away from 0
+    const amp = ampVal.toFixed(2) + 'deg';
+
+    g.style.setProperty('--tilt', tilt);
+    g.style.setProperty('--amp', amp);
+
+    // desynchronize timing a bit
+    g.style.animationDuration = (5.6 + Math.random()*1.4).toFixed(2) + 's';
+    g.style.animationDelay = (Math.random()*1.5).toFixed(2) + 's';
+  });
+})();
+
+/* === Random rotation for each daisy head === */
+document.querySelectorAll('#daisies use').forEach(useEl => {
+  const rot = (Math.random() * 360).toFixed(1);
+  // Append a rotation after existing transform
+  const old = useEl.getAttribute('transform') || '';
+  useEl.setAttribute('transform', old + ` rotate(${rot})`);
+});
+
+
