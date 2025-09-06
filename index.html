@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Monthsary ❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#top"><span class="brand-heart">❤</span> For My Love</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#message"><i class="bi bi-envelope-heart"></i> Message</a></li>
+          <li class="nav-item"><a class="nav-link" href="#photos"><i class="bi bi-images"></i> Photos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flowers"><i class="bi bi-flower3"></i> Custom Flowers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#iloveyou"><i class="bi bi-heart-fill"></i> I Love You</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero py-5 py-lg-6">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold mb-3">Happy First Monthsary, My Love! <span class="brand-heart">♥</span></h1>
+      <p class="lead mx-auto" style="max-width: 760px;">I made this little corner of the internet just for you. Four tiny doors: a message from my heart, photos I adore, a bouquet we can design together, and a page that simply says it all.</p>
+      <div class="d-flex gap-2 justify-content-center mt-3 flex-wrap">
+        <a class="btn btn-accent" href="#message">Read the Message</a>
+        <a class="btn btn-outline-dark" href="#photos">See Our Photos</a>
+        <a class="btn btn-outline-dark" href="#flowers">Build Your Bouquet</a>
+        <a class="btn btn-outline-dark" href="#iloveyou">I Love You</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MESSAGE SECTION -->
+  <section id="message" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-4 p-md-5">
+            <h2 class="section-title mb-3"><i class="bi bi-envelope-heart me-2"></i>A Message For You</h2>
+            <p class="fs-5">Hi love,</p>
+            <p class="fs-5">One month with you has been a collection of tiny miracles—your laugh, your stories, the way time feels softer when we’re together. Thank you for choosing me every day.</p>
+            <p class="fs-5">Here’s to more shared sunsets, spontaneous dates, and all the simple moments that make us <em>us</em>. I’m excited for every tomorrow because it has you in it.</p>
+            <p class="fs-5 mb-0">Always yours,</p>
+            <p class="fs-5 fw-semibold">— Your Mark</p>
+            <div class="d-flex gap-2 align-items-center">
+              <button class="btn btn-accent" id="addHeartBtn"><i class="bi bi-heart"></i> Add a Heart</button>
+              <span id="heartCount" class="fw-semibold text-secondary">0 hearts added</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS SECTION -->
+  <section id="photos" class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+        <h2 class="section-title m-0"><i class="bi bi-images me-2"></i>Pictures</h2>
+        <small class="text-secondary">Tip: Tap a photo to view it larger</small>
+      </div>
+      <div class="row g-3" id="gallery">
+        <!-- Sample images; replace src with your own -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1887&auto=format&fit=crop">
+            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="Us at dinner">
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1887&auto=format&fit=crop">
+            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop" alt="City walk">
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1887&auto=format&fit=crop">
+            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=600&auto=format&fit=crop" alt="Café moment">
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#lightbox" data-img="https://images.unsplash.com/photo-1520975682031-bc1cf7a13a8c?q=80&w=1887&auto=format&fit=crop">
+            <img class="img-fluid rounded gallery-img" src="https://images.unsplash.com/photo-1520975682031-bc1cf7a13a8c?q=80&w=600&auto=format&fit=crop" alt="Beach day">
+          </a>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <img id="lightboxImg" class="img-fluid w-100" alt="Expanded photo">
+            </div>
+            <div class="modal-footer justify-content-between">
+              <div class="text-secondary small">Swipe down or tap outside to close</div>
+              <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM FLOWERS SECTION -->
+  <section id="flowers" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-4"><i class="bi bi-flower3 me-2"></i>Build Your Bouquet</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 order-lg-2 d-flex justify-content-center">
+          <!-- SVG preview -->
+          <div class="bouquet-stage d-flex align-items-center justify-content-center p-3">
+            <svg id="bouquetSvg" viewBox="0 0 300 300" width="100%" height="100%" role="img" aria-label="Bouquet preview">
+              <!-- stems -->
+              <g id="stems" stroke="#6ea04b" stroke-width="6" stroke-linecap="round"></g>
+              <!-- flowers -->
+              <g id="flowersLayer"></g>
+              <!-- ribbon -->
+              <path class="ribbon" d="M115 220 Q150 200 185 220 Q150 235 115 220z"/>
+              <circle class="ribbon" cx="150" cy="220" r="10"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="card p-4 controls">
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Flower Type</label>
+                <div class="btn-group w-100" role="group">
+                  <input type="radio" class="btn-check" name="flowerType" id="typeRose" value="rose" checked>
+                  <label class="btn btn-outline-dark" for="typeRose">Roses</label>
+                  <input type="radio" class="btn-check" name="flowerType" id="typeTulip" value="tulip">
+                  <label class="btn btn-outline-dark" for="typeTulip">Tulips</label>
+                  <input type="radio" class="btn-check" name="flowerType" id="typeDaisy" value="daisy">
+                  <label class="btn btn-outline-dark" for="typeDaisy">Daisies</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="colorPicker" class="form-label">Petal Color</label>
+                <input type="color" class="form-control form-control-color w-100" id="colorPicker" value="#ff6b81" title="Choose flower color">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="countRange" class="form-label">How many flowers: <span id="countLabel">6</span></label>
+                <input type="range" class="form-range" min="3" max="12" value="6" id="countRange">
+              </div>
+              <div class="col-12">
+                <label for="noteInput" class="form-label">Add a tiny note (optional)</label>
+                <input id="noteInput" class="form-control" placeholder="e.g., For the love of my life">
+              </div>
+              <div class="col-12 d-flex gap-2">
+                <button id="regenBtn" class="btn btn-accent"><i class="bi bi-stars"></i> Refresh Bouquet</button>
+                <button id="savePngBtn" class="btn btn-outline-dark"><i class="bi bi-download"></i> Save as PNG</button>
+              </div>
+              <div class="col-12 small text-secondary">Pro tip: change color & type, drag the range, then tap “Refresh Bouquet”.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- I LOVE YOU SECTION -->
+  <section id="iloveyou" class="py-5 love-bg">
+    <div class="container love-content text-center">
+      <h2 class="display-6 fw-bold mb-3"><i class="bi bi-heart-fill brand-heart"></i> I Love You</h2>
+      <p class="lead">No matter where we are or what we’re doing, this will always be true. </p>
+      <div class="my-4">
+        <button id="confettiBtn" class="btn btn-accent btn-lg"><i class="bi bi-balloon-heart"></i> Celebrate Us</button>
+      </div>
+      <p class="text-secondary">(Tap for floating hearts ✨)</p>
+    </div>
+    <!-- floating hearts container -->
+    <div id="heartsContainer"></div>
+  </section>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div class="footer">Made with ❤ by Mark</div>
+      <div class="sticky-bottom-cta">
+        <a href="#message" class="btn btn-accent btn-sm"><i class="bi bi-arrow-up-right"></i> Back to Message</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
