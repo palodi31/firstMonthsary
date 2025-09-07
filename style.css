@@ -218,14 +218,14 @@ body{ background:linear-gradient(180deg,var(--sky-100),#ffffff); color:var(--ink
 .teddy.hug #arm-left{ animation: armLeftHug .9s ease; }
 .teddy.hug #arm-right{ animation: armRightHug .9s ease; }
 @keyframes armLeftHug{
-  0%{ transform: translate(90px,210px) rotate(0deg); }
-  50%{ transform: translate(90px,210px) rotate(18deg); }
-  100%{ transform: translate(90px,210px) rotate(0deg); }
+  0%   { transform: translate(80px,210px) rotate(45deg)   scale(1,1);   }
+  50%  { transform: translate(80px,210px) rotate(45deg)   scale(1,1.40);} /* longer */
+  100% { transform: translate(80px,210px) rotate(45deg)   scale(1,1);   }
 }
 @keyframes armRightHug{
-  0%{ transform: translate(210px,210px) rotate(0deg); }
-  50%{ transform: translate(210px,210px) rotate(-18deg); }
-  100%{ transform: translate(210px,210px) rotate(0deg); }
+  0%   { transform: translate(224px,210px) rotate(-45deg) scale(1,1);   }
+  50%  { transform: translate(224px,210px) rotate(-45deg) scale(1,1.40);} /* longer */
+  100% { transform: translate(224px,210px) rotate(-45eg) scale(1,1);   }
 }
 
 /* Wave animation: right arm waves */
