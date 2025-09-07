@@ -213,4 +213,56 @@ document.querySelectorAll('#daisies use').forEach(useEl => {
   useEl.setAttribute('transform', old + ` rotate(${rot})`);
 });
 
+/* === Virtual Teddy interactions === */
+(() => {
+  const teddy = document.querySelector('#teddy .teddy') || document.querySelector('#teddy svg #teddy');
+  const eyes = document.querySelector('#teddy svg #eyes');
+  const btnHug = document.getElementById('btnHug');
+  const btnWave = document.getElementById('btnWave');
+  const btnBlink = document.getElementById('btnBlink');
+  const heartsLayer = document.getElementById('teddyHearts');
+
+  if(!teddy) return;
+
+  function spawnTeddyHeart(){
+    const HEARTS = ['❤️','🩷','💖','💗','💓','💞','💘','💝'];
+    const h = document.createElement('div');
+    h.className = 'teddy-heart';
+    h.textContent = HEARTS[Math.floor(Math.random()*HEARTS.length)];
+    const x = 35 + Math.random()*30; // roughly chest area %
+    const y = 55 + Math.random()*10;
+    h.style.left = x + '%';
+    h.style.top = y + '%';
+    heartsLayer.appendChild(h);
+    setTimeout(()=>h.remove(), 2000);
+  }
+
+  btnHug?.addEventListener('click', ()=>{
+    teddy.classList.remove('wave','blink'); // reset others
+    teddy.classList.add('hug');
+    // burst of hearts
+    for(let i=0;i<7;i++) setTimeout(spawnTeddyHeart, i*120);
+    setTimeout(()=> teddy.classList.remove('hug'), 1000);
+  });
+
+  btnWave?.addEventListener('click', ()=>{
+    teddy.classList.remove('hug','blink');
+    teddy.classList.add('wave');
+    setTimeout(()=> teddy.classList.remove('wave'), 1100);
+  });
+
+  btnBlink?.addEventListener('click', ()=>{
+    teddy.classList.remove('hug','wave');
+    teddy.classList.add('blink');
+    setTimeout(()=> teddy.classList.remove('blink'), 240);
+  });
+
+  // Cute auto-blink every ~6–9s
+  setInterval(()=>{
+    if(!document.hidden){
+      teddy.classList.add('blink');
+      setTimeout(()=> teddy.classList.remove('blink'), 240);
+    }
+  }, 3000 + Math.random()*3000);
+})();
 
